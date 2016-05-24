@@ -252,7 +252,7 @@ Value Entry::shelter_storm(const Position& pos, Square ksq) {
                  [f == file_of(ksq) && rkThem == relative_rank(Us, ksq) + 1 ? BlockedByKing  :
                   rkUs   == RANK_1                                          ? NoFriendlyPawn :
                   rkThem == rkUs + 1                                        ? BlockedByPawn  : Unblocked]
-                 [std::min(f, FILE_H - f)][rkThem];
+                 [std::min(f, FILE_H - f)][rkThem] * 2;
   }
 
   return safety;
